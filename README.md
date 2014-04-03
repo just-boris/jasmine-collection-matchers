@@ -1,4 +1,4 @@
-## jasmine-collection-matchers
+## jasmine-collection-matchers [![Build Status](https://travis-ci.org/just-boris/jasmine-collection-matchers.svg?branch=master)](https://travis-ci.org/just-boris/jasmine-collection-matchers)
 
 > A set matchers which hepls you comparing collection
 
@@ -55,10 +55,10 @@ it('should match collection', function() {
 
 ## Matchers
 
-### expect(<Array>).toHaveSameItems(<Array>)
+### expect(&lt;Array&gt;).toHaveSameItems(&lt;Array&gt;)
 
 Expect that passed arrays are identical. If not, prints the difference.
 
-### expect(<Array>).toHaveUniqueItems()
+### expect(&lt;Array&gt;).toHaveUniqueItems()
 
 Expect that all items in array are unique. If not, prints indexes of duplicates

@@ -1,4 +1,4 @@
-## jasmine-collection-matchers
+## jasmine-collection-matchers [![Build Status](https://travis-ci.org/just-boris/jasmine-collection-matchers.svg?branch=master)](https://travis-ci.org/just-boris/jasmine-collection-matchers)
 
 > A set matchers which hepls you comparing collection
 

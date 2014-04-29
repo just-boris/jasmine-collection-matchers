@@ -5,19 +5,19 @@ beforeEach(function() {
             function isObject(obj) {
                 return Object.prototype.toString.apply(obj) === '[object Object]';
             }
-            function craftMessage(actual, mistmatches) {
+            function craftMessage(actual, expected, mistmatches) {
                 if(mistmatches.length === 0) {
-                    return "Expected collection " + JSON.stringify(actual) + " are not equal";
+                    return "Expected collection " + JSON.stringify(actual) + " are not equal to " + JSON.stringify(expected);
                 }
                 return ["Expected collection are equal, but:"].concat(mistmatches.map(function(m) {
-                    return 'at ' + m[0] + ': expected ' + JSON.stringify(m[2]) + ', actual ' + JSON.stringify(m[1]);
+                    return 'at ' + m + ': expected ' + JSON.stringify(expected[m]) + ', actual ' + JSON.stringify(actual[m]);
                 })).join('\n    ');
             }
             function compareArrays(actual, expected) {
                 var mismatches = [];
                 actual.forEach(function(item, i) {
                     if(!util.equals(item, expected[i], customEqualityTesters)) {
-                        mismatches.push([i, item, expected[i]]);
+                        mismatches.push(i);
                     }
                 });
                 return mismatches;
@@ -26,7 +26,7 @@ beforeEach(function() {
                 var mismatches = [];
                 Object.keys(actual).forEach(function(key) {
                     if(!util.equals(actual[key], expected[key], customEqualityTesters)) {
-                        mismatches.push([key, actual[key], expected[key]]);
+                        mismatches.push(key);
                     }
                 });
                 return mismatches;
@@ -54,7 +54,7 @@ beforeEach(function() {
                     }
                     return {
                         pass: mismatches.length === 0,
-                        message: craftMessage(actual, mismatches)
+                        message: craftMessage(actual, expected, mismatches)
                     };
                 }
             };

@@ -36,6 +36,10 @@ describe("toHaveSameItems", function() {
             expect({a: 1, b:2}).not.toHaveSameItems({a: 1});
         });
 
+        it("should require all keys from expectation in object", function() {
+            expect({a: 1}).not.toHaveSameItems({a: 1, b:2});
+        });
+
         it("should compare content", function() {
             expect({a: 1, b:2}).not.toHaveSameItems({a: 2, b: 2});
         });

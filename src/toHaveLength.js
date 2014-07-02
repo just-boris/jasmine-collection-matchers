@@ -4,7 +4,7 @@ beforeEach(function() {
             "use strict";
             return {
                 compare: function(actual, expected) {
-                    if(!actual.length) {
+                    if(!actual.hasOwnProperty || !actual.hasOwnProperty('length')) {
                         throw new Error('Actual must have length property');
                     }
                     var pass = actual.length === expected;

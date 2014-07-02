@@ -63,6 +63,6 @@ Expect that passed arrays or objects are identical. If not, prints the differenc
 
 Expect that all items in array are unique. If not, prints indexes of duplicates
 
-### expect(&lt;Array, String&gt;).toHaveLength()
+### expect(&lt;Array, String&gt;).toHaveLength(<Number>)
 
 Check that item has expected length. Throw exception when actual hasn't length property

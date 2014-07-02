@@ -12,6 +12,10 @@ describe("toHaveLength", function() {
             expect([1,2,3]).not.toHaveLength(4);
         });
 
+        it("should check empty arrays", function () {
+            expect([]).toHaveLength(0);
+        });
+
         it("passing test", function() {
             expect([1,2,3]).toHaveLength(3);
         });

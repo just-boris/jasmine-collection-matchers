@@ -1,3 +1,7 @@
+# 0.0.6
+
+Fix bug in `toHaveLength()`
+
 # 0.0.5
 
 Add new `toHaveLength()` matcher

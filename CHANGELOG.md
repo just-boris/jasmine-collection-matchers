@@ -1,3 +1,7 @@
+# 0.0.7
+
+Ignore sort option in `toHaveSameItems` for arrays
+
 # 0.0.6
 
 Fix bug in `toHaveLength()`

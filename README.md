@@ -55,9 +55,11 @@ it('should match collection', function() {
 
 ## Matchers
 
-### expect(&lt;Array, Object&gt;).toHaveSameItems(&lt;Array, Object&gt;)
+### expect(&lt;Array, Object&gt;).toHaveSameItems(&lt;Array, Object&gt;, [&lt;boolean&gt; ignoreSort])
 
 Expect that passed arrays or objects are identical. If not, prints the difference.
+
+`ignoreSort` &mdash; ignore items order while comparing arrays. Default to `false`.
 
 ### expect(&lt;Array&gt;).toHaveUniqueItems()
 

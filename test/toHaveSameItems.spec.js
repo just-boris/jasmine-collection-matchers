@@ -31,6 +31,24 @@ describe("toHaveSameItems", function() {
         });
     });
 
+    describe("match arrays ignore order", function() {
+        it("should compare by length", function () {
+            expect([1,2,3]).not.toHaveSameItems([1,2,3,4], true);
+        });
+
+        it("should compare content", function() {
+            expect([1,2,3]).not.toHaveSameItems([1,2,4], true);
+        });
+
+        it("should ignore element order", function() {
+            expect([1,2,3]).toHaveSameItems([3,1,2], true);
+        });
+
+        it("passing test", function() {
+            expect([1,2,3]).toHaveSameItems([1,2,3], true);
+        });
+    });
+
     describe("match collections", function () {
         it("should compare keys", function() {
             expect({a: 1, b:2}).not.toHaveSameItems({a: 1});

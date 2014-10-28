@@ -1,3 +1,7 @@
+# 0.0.8
+
+Fix formatting of errors `toHaveSameItems`
+
 # 0.0.7
 
 Ignore sort option in `toHaveSameItems` for arrays

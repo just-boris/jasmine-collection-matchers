@@ -45,18 +45,20 @@ beforeEach(function() {
                 return mismatches;
             }
             function compareHashes(actual, expected) {
-                var mismatches = [];
+                var mismatches = {};
                 Object.keys(actual).forEach(function(key) {
                     if(!util.equals(actual[key], expected[key], customEqualityTesters)) {
-                        mismatches.push(key);
+                        mismatches[key] = {index: key, actual: actual[key], expected: expected[key]};
                     }
                 });
                 Object.keys(expected).forEach(function(key) {
-                    if(!util.equals(actual[key], expected[key], customEqualityTesters) && mismatches.indexOf(key) === -1) {
-                        mismatches.push(key);
+                    if(!util.equals(actual[key], expected[key], customEqualityTesters) && !mismatches[key]) {
+                        mismatches[key] = {index: key, actual: actual[key], expected: expected[key]};
                     }
                 });
-                return mismatches;
+                return Object.keys(mismatches).map(function(key) {
+                    return mismatches[key];
+                });
             }
             return {
                 compare: function(actual, expected, ignoreOrder) {

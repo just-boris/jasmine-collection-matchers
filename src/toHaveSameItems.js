@@ -1,5 +1,12 @@
 beforeEach(function() {
-    "use strict";
+    'use strict';
+    function stringify(entity) {
+        try {
+            return JSON.stringify(entity);
+        } catch(e) {
+            return entity;
+        }
+    }
     jasmine.addMatchers({
         toHaveSameItems: function(util, customEqualityTesters) {
             function isObject(obj) {
@@ -7,10 +14,10 @@ beforeEach(function() {
             }
             function craftMessage(actual, expected, mistmatches) {
                 if(mistmatches.length === 0) {
-                    return "Expected collection " + JSON.stringify(actual) + " are not equal to " + JSON.stringify(expected);
+                    return 'Expected collection ' + stringify(actual) + ' are not equal to ' + stringify(expected);
                 }
-                return ["Expected collection are equal, but:"].concat(mistmatches.map(function(m) {
-                    return 'at ' + m.index + ': expected ' + JSON.stringify(m.expected) + ', actual ' + JSON.stringify(m.actual);
+                return ['Expected collection are equal, but:'].concat(mistmatches.map(function(m) {
+                    return 'at ' + m.index + ': expected ' + stringify(m.expected) + ', actual ' + stringify(m.actual);
                 })).join('\n    ');
             }
             function compareArraysSorted(actual, expected) {

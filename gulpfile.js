@@ -30,6 +30,14 @@ function runJasmine(config) {
         if(config) {
            jasmine.loadConfig(config);
         }
+        var jasmineAllureReporter = require('jasmine-allure-reporter').Jasmine2AllureReporter.singleton;
+        jasmineAllureReporter.configure({
+          allureReport: {
+            resultsDir: 'allure-results'
+          }
+        });
+        jasmine.addReporter(jasmineAllureReporter);
+        jasmine.configureDefaultReporter({ showColors: true });
         jasmine.onComplete(function(passed) {
             if(passed) {
                 resolve();

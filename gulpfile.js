@@ -17,37 +17,39 @@ gulp.task('concat', function() {
         .pipe(gulp.dest('lib/'));
 });
 
-function runJasmine(config, done) {
-    var jasmine = new Jasmine(),
+function runJasmine(config) {
+    return new Promise(function(resolve, reject) {
+        var jasmine = new Jasmine(),
         defaultConfig = {
           spec_dir: 'test',
           spec_files: [
             '*[sS]pec.js'
           ]
         };    
-    jasmine.loadConfig(defaultConfig);
-    if(config) {
-       jasmine.loadConfig(config);
-    }
-    jasmine.onComplete(function(passed) {
-        if(passed) {
-            done();
-        } else {
-            done(new Error('some tests has been failed'));
+        jasmine.loadConfig(defaultConfig);
+        if(config) {
+           jasmine.loadConfig(config);
         }
+        jasmine.onComplete(function(passed) {
+            if(passed) {
+                resolve();
+            } else {
+                reject('some tests has been failed');
+            }
+        });
+        jasmine.execute();
     });
-    jasmine.execute();
 }
 
-gulp.task('jasmine', ['lint'], function(done) {
-    runJasmine(null, done);
+gulp.task('jasmine', ['lint'], function() {
+    return runJasmine();
 });
 
-gulp.task('revert-test', function(done) {
-    runJasmine({
+gulp.task('revert-test', function() {
+    return runJasmine({
         spec_dir: 'util',
         helpers: ['jasmineRevertSpecs.js']
-    }, done);
+    });
 });
 
 gulp.task('default', ['lint', 'concat', 'jasmine']);

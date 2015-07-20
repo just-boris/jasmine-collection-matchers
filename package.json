@@ -6,7 +6,7 @@
   "repository": "git@github.com:just-boris/jasmine-collection-matchers.git",
   "scripts": {
     "test": "gulp",
-    "revert-test": "jasmine-node --matchAll test/ util/"
+    "revert-test": "gulp revert-test"
   },
   "keywords": [
     "jasmine",
@@ -14,9 +14,9 @@
     "collections"
   ],
   "devDependencies": {
-    "jasmine-node": "~2.0.0",
-    "gulp-concat": "~2.2.0",
     "gulp": "~3.6.0",
-    "gulp-jshint": "~1.5.3"
+    "gulp-concat": "~2.2.0",
+    "gulp-jshint": "~1.5.3",
+    "jasmine": "^2.3.1"
   }
 }

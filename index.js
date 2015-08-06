@@ -1,3 +1,3 @@
-require("fs").readdirSync("./src").forEach(function(file) {
-    require("./src/" + file);
+require("fs").readdirSync(__dirname + "/src").forEach(function(file) {
+    require(__dirname + "/src/" + file);
 });

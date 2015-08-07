@@ -3,6 +3,7 @@
   "version": "0.0.10",
   "description": "Jasmine Matchers to collections (toHaveSameItems, toHaveUniqueItems)",
   "main": "index.js",
+  "browser": "lib/pack.js",
   "repository": "git@github.com:just-boris/jasmine-collection-matchers.git",
   "scripts": {
     "test": "gulp",

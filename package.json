@@ -2,7 +2,7 @@
   "name": "jasmine-collection-matchers",
   "version": "0.1.0",
   "description": "Jasmine Matchers to collections (toHaveSameItems, toHaveUniqueItems)",
-  "main": "index.js",
+  "main": "lib/pack.js",
   "browser": "lib/pack.js",
   "repository": "git@github.com:just-boris/jasmine-collection-matchers.git",
   "scripts": {
@@ -18,9 +18,7 @@
     "gulp": "~3.6.0",
     "gulp-concat": "~2.2.0",
     "gulp-jshint": "~1.5.3",
-    "jasmine": "^2.3.1"
-  },
-  "dependencies": {
-    "require-dir": "^0.3.0"
+    "jasmine": "^2.3.1",
+    "bluebird": "~2.9.34"
   }
 }

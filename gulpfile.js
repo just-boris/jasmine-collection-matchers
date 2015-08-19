@@ -2,7 +2,8 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
-    Jasmine = require('jasmine');
+    Jasmine = require('jasmine'),
+    Promise = require('bluebird');
 
 gulp.task('lint', function() {
     return gulp.src(['(src|test)/**'])
@@ -13,8 +14,8 @@ gulp.task('lint', function() {
 
 gulp.task('concat', function() {
     return gulp.src('src/**')
-        .pipe(concat('pack.js'))
-        .pipe(gulp.dest('lib/'));
+        .pipe(concat('index.js'))
+        .pipe(gulp.dest('.'));
 });
 
 function runJasmine(config) {
@@ -25,7 +26,7 @@ function runJasmine(config) {
           spec_files: [
             '*[sS]pec.js'
           ]
-        };    
+        };
         jasmine.loadConfig(defaultConfig);
         if(config) {
            jasmine.loadConfig(config);

@@ -19,6 +19,6 @@
     "gulp-concat": "~2.2.0",
     "gulp-jshint": "~1.5.3",
     "jasmine": "^2.3.1",
-    "bluebird": "~2.9.34"
+    "promise": "~7.0.4"
   }
 }

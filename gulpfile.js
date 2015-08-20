@@ -3,7 +3,9 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     Jasmine = require('jasmine'),
-    Promise = require('bluebird');
+    Promise = (typeof(Promise) === 'undefined') ? require('promise') : Promise;
+
+
 
 gulp.task('lint', function() {
     return gulp.src(['(src|test)/**'])

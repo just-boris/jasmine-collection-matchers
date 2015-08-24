@@ -2,7 +2,7 @@
   "name": "jasmine-collection-matchers",
   "version": "0.0.9",
   "description": "Useful matchers for Jasmine",
-  "main": "lib/pack.js",
+  "main": "index.js",
   "homepage": "https://github.com/just-boris/jasmine-collection-matchers",
 
   "keywords": [

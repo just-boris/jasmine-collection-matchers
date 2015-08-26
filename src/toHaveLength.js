@@ -10,7 +10,7 @@ beforeEach(function() {
                     var pass = actual.length === expected;
                     return {
                         pass: pass,
-                        message: 'Expected to have '+ (pass ? 'not ' : '') +'length ' + expected + ', but actual is ' + actual.length
+                        message: 'Expected to have '+ (pass ? 'not ' : '') +'length ' + expected + ', but actual length is ' + actual.length
                     };
                 }
             };

@@ -4,13 +4,13 @@ describe("toHaveUniqueItems", function() {
     it("should accept Array in actual", function() {
         expect(function() {
             expect("test").not.toHaveUniqueItems();
-        }).toThrowError("Actual is not Array")
+        }).toThrowError("Actual is not Array. It is of type: " + typeof("test"))
     });
 
     it("should require empty expectation", function() {
         expect(function() {
             expect(["string"]).not.toHaveUniqueItems("string");
-        }).toThrowError("Expectation doesn't needed")
+        }).toThrowError("Expectation isn't needed.")
     });
 
     it("should find duplicates", function () {

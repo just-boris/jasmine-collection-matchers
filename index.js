@@ -140,11 +140,11 @@ beforeEach(function() {
                 }).join('\n');
             }
             return {
-                compare: function(actual, expect) {
+                compare: function(actual, expected) {
                     if(!Array.isArray(actual)) {
                         throw new Error("Actual is not Array. It is of type: " + typeof(actual));
                     }
-                    if(expect) {
+                    if(expected) {
                         throw new Error("Expectation isn't needed.");
                     }
                     var duplicates = [];

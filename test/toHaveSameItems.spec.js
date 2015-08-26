@@ -4,13 +4,15 @@ describe("toHaveSameItems", function() {
     it("should accept Array in actual", function() {
         expect(function() {
             expect('string').toHaveSameItems([]);
-        }).toThrowError('Actual must be an Array or Object')
+        }).toThrowError('Actual must be an Array or Object. Is type: '
+          + typeof('string'))
     });
 
     it("should accept Array in expectation", function() {
         expect(function() {
             expect([]).not.toHaveSameItems('actual');
-        }).toThrowError('Expectation must be an Array or Object')
+        }).toThrowError('Expectation must be an Array or Object. Is type: '
+          + typeof('actual'))
     });
 
     describe("match arrays", function() {

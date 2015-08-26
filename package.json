@@ -1,6 +1,6 @@
 {
   "name": "jasmine-collection-matchers",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Jasmine Matchers to collections (toHaveSameItems, toHaveUniqueItems)",
   "main": "index.js",
   "browser": "index.js",

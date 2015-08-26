@@ -1,7 +1,7 @@
 {
   "name": "jasmine-collection-matchers",
-  "version": "0.0.9",
-  "description": "Useful matchers for Jasmine",
+  "version": "0.1.2",
+  "description": "Useful matchers for Jasmine on collections",
   "main": "index.js",
   "homepage": "https://github.com/just-boris/jasmine-collection-matchers",
 

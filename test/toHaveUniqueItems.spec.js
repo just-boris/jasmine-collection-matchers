@@ -4,7 +4,7 @@ describe("toHaveUniqueItems", function() {
     it("should accept Array in actual", function() {
         expect(function() {
             expect("test").not.toHaveUniqueItems();
-        }).toThrowError("Actual is not Array. It is of type: " + typeof("test"))
+        }).toThrowError("Actual is not Array. It is of type: string")
     });
 
     it("should require empty expectation", function() {

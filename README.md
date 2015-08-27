@@ -9,7 +9,7 @@ Message:
   Expected [ 1, 2, 3, 4, 5, 6 ] to equal [ 1, 2, 3, 4, 4, 6 ].
 ```
 
-It can be hard to notice that fifth element is wrong. This module adds a new matchers specially for collections that will print more detailed error messages about the values differences.
+It can be hard to notice that fifth element is wrong. This module adds new matchers specially for collections that will print more detailed error messages about the values differences.
 
 ```
 Message:

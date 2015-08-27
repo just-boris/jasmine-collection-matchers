@@ -18,7 +18,7 @@ beforeEach(function() {
             return {
                 compare: function(actual, expected) {
                     if(!Array.isArray(actual)) {
-                        throw new Error("Actual is not Array. It is of type: " + typeof(actual));
+                        throw new Error("Actual is not Array. It is of type: " + typeof actual );
                     }
                     if(expected) {
                         throw new Error("Expectation isn't needed.");

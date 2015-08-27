@@ -70,10 +70,10 @@ beforeEach(function() {
             return {
                 compare: function(actual, expected, ignoreOrder) {
                     if(!Array.isArray(actual) && !isObject(actual)) {
-                        throw new Error('Actual must be an Array or Object. Is type: ' + typeof(actual));
+                        throw new Error('Actual must be an Array or Object. Is type: ' + typeof actual);
                     }
                     if(!Array.isArray(expected) && !isObject(expected)) {
-                        throw new Error('Expectation must be an Array or Object. Is type: ' + typeof(expected));
+                        throw new Error('Expectation must be an Array or Object. Is type: ' + typeof expected);
                     }
                     var mismatches;
                     if(Array.isArray(actual) && Array.isArray(expected)) {

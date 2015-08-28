@@ -11,17 +11,17 @@ beforeEach(function() {
                 return -1;
             }
             function craftMessage(duplicates, pass) {
-                return pass ? 'All items in array are unique' : 'Array contains duplicates: \n'+duplicates.map(function(dupe) {
+                return pass ? 'All items in the array are unique' : 'Array contains duplicates: \n'+duplicates.map(function(dupe) {
                     return JSON.stringify(dupe[2])+' at '+dupe[0]+' and '+dupe[1];
                 }).join('\n');
             }
             return {
                 compare: function(actual, expected) {
                     if(!Array.isArray(actual)) {
-                        throw new Error("Actual is not Array");
+                        throw new Error("Actual is not Array. It is of type: " + typeof actual );
                     }
                     if(expected) {
-                        throw new Error("Expectation doesn't needed");
+                        throw new Error("Expectation isn't needed.");
                     }
                     var duplicates = [];
                     actual.forEach(function(item, i) {

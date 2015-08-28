@@ -12,12 +12,12 @@ beforeEach(function() {
             function isObject(obj) {
                 return Object.prototype.toString.apply(obj) === '[object Object]';
             }
-            function craftMessage(actual, expected, mistmatches) {
-                if(mistmatches.length === 0) {
-                    return 'Expected collection ' + stringify(actual) + ' are not equal to ' + stringify(expected);
+            function craftMessage(actual, expected, mismatches) {
+                if(mismatches.length === 0) {
+                    return 'The collections do not match in length or objects. \n Expected collection:' + stringify(actual) + ' is not equal to ' + stringify(expected);
                 }
-                return ['Expected collection are equal, but:'].concat(mistmatches.map(function(m) {
-                    return 'at ' + m.index + ': expected ' + stringify(m.expected) + ', actual ' + stringify(m.actual);
+                return ['The collections have equal length, but do not match.'].concat(mismatches.map(function(m) {
+                    return 'At ' + m.index + ': expected ' + stringify(m.expected) + ', actual ' + stringify(m.actual);
                 })).join('\n    ');
             }
             function compareArraysSorted(actual, expected) {
@@ -70,17 +70,17 @@ beforeEach(function() {
             return {
                 compare: function(actual, expected, ignoreOrder) {
                     if(!Array.isArray(actual) && !isObject(actual)) {
-                        throw new Error('Actual must be an Array or Object');
+                        throw new Error('Actual must be an Array or Object. Is type: ' + typeof actual);
                     }
                     if(!Array.isArray(expected) && !isObject(expected)) {
-                        throw new Error('Expectation must be an Array or Object');
+                        throw new Error('Expectation must be an Array or Object. Is type: ' + typeof expected);
                     }
                     var mismatches;
                     if(Array.isArray(actual) && Array.isArray(expected)) {
                         if(actual.length !== expected.length) {
                             return {
                                 pass: false,
-                                message: 'Array sizes doest match! Actual size: ' + actual.length + ', expected size: ' + expected.length
+                                message: 'Array length differs! Actual length: ' + actual.length + ', expected length: ' + expected.length
                             };
                         }
                         if(ignoreOrder) {

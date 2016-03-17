@@ -21,11 +21,7 @@ beforeEach(function() {
 beforeEach(function() {
     'use strict';
     function stringify(entity) {
-        try {
-            return JSON.stringify(entity);
-        } catch(e) {
-            return entity;
-        }
+        return jasmine.pp(entity);
     }
     jasmine.addMatchers({
         toHaveSameItems: function(util, customEqualityTesters) {
@@ -136,7 +132,7 @@ beforeEach(function() {
             }
             function craftMessage(duplicates, pass) {
                 return pass ? 'All items in the array are unique' : 'Array contains duplicates: \n'+duplicates.map(function(dupe) {
-                    return JSON.stringify(dupe[2])+' at '+dupe[0]+' and '+dupe[1];
+                    return jasmine.pp(dupe[2])+' at '+dupe[0]+' and '+dupe[1];
                 }).join('\n');
             }
             return {

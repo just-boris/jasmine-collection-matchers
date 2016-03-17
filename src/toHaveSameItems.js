@@ -1,11 +1,7 @@
 beforeEach(function() {
     'use strict';
     function stringify(entity) {
-        try {
-            return JSON.stringify(entity);
-        } catch(e) {
-            return entity;
-        }
+        return jasmine.pp(entity);
     }
     jasmine.addMatchers({
         toHaveSameItems: function(util, customEqualityTesters) {

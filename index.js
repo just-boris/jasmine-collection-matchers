@@ -105,7 +105,7 @@ beforeEach(function() {
                             mismatches = compareArraysSorted(actual, expected);
                         }
                     }
-                    else if(isObject(actual) && isObject(expected)) {
+                    else {
                         mismatches = compareHashes(actual, expected);
                     }
                     return {

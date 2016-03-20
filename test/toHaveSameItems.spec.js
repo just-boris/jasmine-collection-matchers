@@ -69,4 +69,50 @@ describe("toHaveSameItems", function() {
         });
     });
 
+    describe("match arrays to collections", function () {
+        it("should compare keys", function() {
+            var array = new Array();
+            array['a'] = 1;
+            array['b'] = 2;
+
+            expect(array).not.toHaveSameItems({a: 1});
+            expect(array).toHaveSameItems({a: 1, b: 2});
+            expect(array).not.toHaveSameItems({a: 1, b: 2, c: 3});
+        });
+
+        it("should compare indexes", function() {
+            expect([0,1]).not.toHaveSameItems({0: 0});
+            expect([0,1]).toHaveSameItems({0: 0, 1: 1});
+            expect([0,1]).not.toHaveSameItems({0: 0, 1: 1, 2: 2});
+        });
+    });
+
+    describe("match collections to arrays", function () {
+        it("should compare keys", function() {
+            var array1 = new Array();
+            array1['a'] = 1;
+
+            expect({a: 1, b: 2}).not.toHaveSameItems(array1);
+
+            var array2 = new Array();
+            array2['a'] = 1;
+            array2['b'] = 2;
+
+            expect({a: 1, b: 2}).toHaveSameItems(array2);
+
+            var array3 = new Array();
+            array3['a'] = 1;
+            array3['b'] = 2;
+            array3['c'] = 3;
+
+            expect({a: 1, b: 2}).not.toHaveSameItems(array3);
+        });
+
+        it("should compare indexes", function() {
+            expect({0: 0, 1: 1}).not.toHaveSameItems([0]);
+            expect({0: 0, 1: 1}).toHaveSameItems([0,1]);
+            expect({0: 0, 1: 1}).not.toHaveSameItems([0,1,2]);
+        });
+    });
+
 });

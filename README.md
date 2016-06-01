@@ -42,7 +42,7 @@ it('should match collection', function() {
 Include combined matchers file:
 
 ```html
-<script src="/node_modules/jasmine-collection-matchers/lib/pack.js"></script>
+<script src="/bower_components/jasmine-collection-matchers/index.js"></script>
 ```
 
 Now you can use new matchers

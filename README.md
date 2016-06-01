@@ -21,9 +21,8 @@ Much clearer!
 
 ## Usage:
 
-**Node JS:**
+### NPM
 
-Install via `npm`:
 ```
 npm install jasmine-collection-matchers
 ```
@@ -37,7 +36,11 @@ it('should match collection', function() {
 });
 ```
 
-**Browser**
+### Bower
+
+```
+bower install jasmine-collection-matchers
+```
 
 Include combined matchers file:
 
